@@ -40,7 +40,8 @@ jobs:
           command: "echo Hello, World!"
       - run:
           name: "Send Keptn Finished Event"
-          command: "curl -X POST \"$keptnEndpoint/api/v1/event\" -H \"accept: application/json\" -H \"x-token: $keptnAPIToken\" -H \"Content-Type: application/json\" -d \"{ \"data\": { \"project\": \"<< pipeline.parameters.keptnProject >>\", \"result\": \"pass\", \"service\": \"<< pipeline.parameters.keptnService >>\", \"stage\": \"<< pipeline.parameters.keptnStage >>\", \"status\": \"succeeded\", \"message\": \"CircleCI pipeline finished...\" }, \"source\": \"circleci\", \"specversion\": \"1.0\", \"type\": \"sh.keptn.event.hello-world.finished\", \"shkeptncontext\": \"<< pipeline.parameters.keptnContext >>\", \"triggeredid\": \"<< pipeline.parameters.keptnTriggeredId >>\"}\""
+          #command: "curl -X POST \"$keptnEndpoint/api/v1/event\" -H \"accept: application/json\" -H \"x-token: $keptnAPIToken\" -H \"Content-Type: application/json\" -d \"{ \"data\": { \"project\": \"<< pipeline.parameters.keptnProject >>\", \"result\": \"pass\", \"service\": \"<< pipeline.parameters.keptnService >>\", \"stage\": \"<< pipeline.parameters.keptnStage >>\", \"status\": \"succeeded\", \"message\": \"CircleCI pipeline finished...\" }, \"source\": \"circleci\", \"specversion\": \"1.0\", \"type\": \"sh.keptn.event.hello-world.finished\", \"shkeptncontext\": \"<< pipeline.parameters.keptnContext >>\", \"triggeredid\": \"<< pipeline.parameters.keptnTriggeredId >>\"}\""
+          command: "echo $keptnEndpoint"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
